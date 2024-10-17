@@ -35,16 +35,15 @@ class App extends Component {
         // If product exists, update its quantity
         const updatedCartList = cartList.map(eachItem => {
           if (eachItem.id === product.id) {
-            return {...eachItem, quantity: eachItem.quantity + 1}
+            return {...eachItem, quantity: eachItem.quantity + product.quantity}
           }
           return eachItem
         })
 
         return {cartList: updatedCartList}
-      } else {
-        // If product doesn't exist, add it to the cart
-        return {cartList: [...cartList, {...product, quantity: 1}]}
       }
+      // If product doesn't exist, add it to the cart with a quantity of 1
+      return {cartList: [...cartList, {...product, quantity: 1}]}
     })
   }
 
@@ -78,9 +77,9 @@ class App extends Component {
       const updatedCartList = cartList.map(eachItem => {
         if (eachItem.id === id && eachItem.quantity > 1) {
           return {...eachItem, quantity: eachItem.quantity - 1}
-        } else {
-          this.removeCartItem(id)
         }
+        this.removeCartItem(id)
+
         return eachItem
       })
 
