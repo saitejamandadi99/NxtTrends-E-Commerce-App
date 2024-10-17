@@ -1,1 +1,41 @@
 /* Write your CSS here */
+.cartItemsSummaryContainer {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  padding: 10px;
+  align-items: flex-start;
+}
+.checkoutButton {
+  background-color: #0b69ff;
+  padding: 10px;
+  color: white;
+  font-size: 15px;
+  border: 0px;
+  border-radius: 5px;
+}
+.orderTotalPrice {
+  display: flex;
+  margin: 0px;
+  justify-content: center;
+  align-items: center;
+}
+.orderHeading {
+  font-size: 14px;
+  color: #616e7c;
+}
+.totalPriceheading {
+  font-size: 19px;
+  font-weight: bold;
+}
+@media screen and (min-width: 768px) {
+  .checkoutButton {
+    font-size: 25px;
+  }
+  .orderHeading {
+    font-size: 20px;
+  }
+  .totalPriceheading {
+    font-size: 25px;
+  }
+}
