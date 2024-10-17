@@ -18,6 +18,9 @@ class App extends Component {
   }
 
   //   TODO: Add your code for remove all cart items, increment cart item quantity, decrement cart item quantity, remove cart item
+  removeAllCartItems = () => {
+    this.setState({cartList: []})
+  }
 
   addCartItem = product => {
     this.setState(prevState => ({cartList: [...prevState.cartList, product]}))
@@ -33,6 +36,7 @@ class App extends Component {
           cartList,
           addCartItem: this.addCartItem,
           removeCartItem: this.removeCartItem,
+          removeAllCartItems: this.removeAllCartItems,
         }}
       >
         <Switch>

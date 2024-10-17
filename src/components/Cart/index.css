@@ -38,3 +38,11 @@
 }
 
 /* Write your CSS here */
+.removeALLBtn {
+  background-color: transparent;
+  border: 0px;
+  cursor: pointer;
+  color: #0b69ff;
+  margin-left: auto;
+  font-weight: 500;
+}
