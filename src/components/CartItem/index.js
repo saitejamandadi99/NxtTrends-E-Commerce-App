@@ -3,8 +3,6 @@ import {AiFillCloseCircle} from 'react-icons/ai'
 
 import CartContext from '../../context/CartContext'
 
-
-
 import './index.css'
 
 const CartItem = props => (
@@ -27,11 +25,19 @@ const CartItem = props => (
               <p className="cart-product-brand">by {brand}</p>
             </div>
             <div className="cart-quantity-container">
-              <button type="button" className="quantity-controller-button">
+              <button
+                type="button"
+                className="quantity-controller-button"
+                data-testid="minus"
+              >
                 <BsDashSquare color="#52606D" size={12} />
               </button>
               <p className="cart-quantity">{quantity}</p>
-              <button type="button" className="quantity-controller-button">
+              <button
+                type="button"
+                className="quantity-controller-button"
+                data-testid="plus"
+              >
                 <BsPlusSquare color="#52606D" size={12} />
               </button>
             </div>
@@ -41,6 +47,7 @@ const CartItem = props => (
                 className="remove-button"
                 type="button"
                 onClick={onRemoveCartItem}
+                data-testid="remove"
               >
                 Remove
               </button>
@@ -50,6 +57,7 @@ const CartItem = props => (
             className="delete-button"
             type="button"
             onClick={onRemoveCartItem}
+            data-testid="remove"
           >
             <AiFillCloseCircle color="#616E7C" size={20} />
           </button>
